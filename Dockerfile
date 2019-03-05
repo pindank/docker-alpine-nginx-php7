@@ -24,7 +24,7 @@ WORKDIR /var/www/html
 
 COPY /config/nginx.conf /etc/nginx/nginx.conf
 COPY /config/fpm-pool.conf /etc/php7/php-fpm.d/fpm-pool.conf
-COPY /config/php.ini:/etc/php7/conf.d/php.ini
+COPY /config/php.ini /etc/php7/conf.d/php.ini
 COPY /config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY /src /var/www/html
 
