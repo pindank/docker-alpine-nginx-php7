@@ -1,15 +1,15 @@
 Docker PHP-FPM 7.1 & Nginx 1.12 on Alpine Linux
 ==============================================
-Lightweight container with Nginx 1.12 & PHP-FPM 7.1 based on build on [Alpine Linux](http://www.alpinelinux.org/). Adapted to use a docker-compose file and my own choice of packages - Big thanks to TrafeX/docker-php-nginx
 
 Usage
 -----
-Start your Docker container:
 
-    docker-compose up
+Pull/Clone source :
 
-See the PHP info on http://localhost, or the static html page on http://localhost/test.html
+    git clone https://github.com/pindank/docker-alpine-nginx-php7.git
 
-Bash into your Docker container
+Built docker image :
 
-    docker-compose exec app /bin/sh
+    docker build -t dokcer-alpine-nginx-php7 .
+    
+Start the image :
