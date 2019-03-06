@@ -19,15 +19,15 @@ RUN ln -sf "/usr/share/zoneinfo/$TZ" /etc/localtime && \
 echo "$TZ" > /etc/timezone && date
 
 # Create webroot directories
-RUN mkdir -p /var/www/html
-WORKDIR /var/www/html
+RUN mkdir -p /var/www/html/public
+WORKDIR /var/www/html/public
 
 COPY /config/nginx.conf /etc/nginx/nginx.conf
 COPY /config/fpm-pool.conf /etc/php7/php-fpm.d/fpm-pool.conf
 COPY /config/php.ini /etc/php7/conf.d/php.ini
 COPY /config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 #TESTING PURPOSE
-#COPY /src /var/www/html
+#COPY /src /var/www/html/public
 
 EXPOSE 80
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
